@@ -1,4 +1,3 @@
-from rest_framework import viewsets
 from .models import *
 from .serializers import *
 from django.shortcuts import render, get_object_or_404,redirect
@@ -17,9 +16,6 @@ def bookings(request):
 def packages(request):
     packages = Package.objects.all()
     return render(request, 'packages.html', {'packages': packages})
-
-
-
 
 def edit_package(request, package_id):
     package = get_object_or_404(Package, pk=package_id)
