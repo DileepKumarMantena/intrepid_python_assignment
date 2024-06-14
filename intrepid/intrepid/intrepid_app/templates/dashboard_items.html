@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="dashboardstyles.css"> -->
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+    }
+    
+    .sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .logo img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    nav ul li {
+        margin: 20px 0;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+    
+    .admin-info {
+        margin-top: auto;
+        text-align: center;
+    }
+    
+    .admin-info a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #007bff;
+    }
+    
+    .main-content {
+        flex: 1;
+        padding: 20px;
+        background-color: #f1f3f5;
+        overflow-y: auto;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .top-bar {
+        display: flex;
+        align-items: center;
+    }
+    
+    .top-bar input[type="search"] {
+        padding: 5px;
+        margin-right: 10px;
+    }
+    
+    .user-info {
+        display: flex;
+        align-items: center;
+    }
+    
+    .user-info span {
+        margin-right: 10px;
+    }
+    
+    .user-info img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    
+    .stats-cards {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .card {
+        background-color: #ffffff;
+        padding: 20px;
+        flex: 1;
+        margin-right: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .card:last-child {
+        margin-right: 0;
+    }
+    
+    .main-dashboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    
+    .bookings-section, .earnings-stats, .monthly-increase, .monthly-report, .valued-clients, .new-flights, .covid-help {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .booking {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    
+    .booking img {
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+    
+    .details p {
+        margin: 0;
+    }
+    
+    .circle-chart {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #e74c3c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 24px;
+        margin: auto;
+    }
+    
+    .client {
+        display: flex;
+        align-items: center;
+    }
+    
+    .client img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+</style>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <!-- <img src="intrepid-logo.png" alt="Intrepid Logo"> -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="#">Visa</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">B2B</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Generic Pages</a></li>
+            </ul>
+        </nav>
+        <div class="admin-info">
+            <a href="#">Contact Super Admin</a>
+            <p>Admin Dashboard<br>2021 All Rights Reserved</p>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Admin, Dashboard</h1>
+            <div class="top-bar">
+                <input type="search" placeholder="Search">
+                <div class="user-info">
+                    <span>EN</span>
+                    <span>Dollar</span>
+                    <span>Hi, Morris</span>
+                    <!-- <img src="user-profile.jpg" alt="User Profile"> -->
+                </div>
+            </div>
+        </header>
+        <div class="stats-cards">
+            <div class="card">2.8B Total Earnings</div>
+            <div class="card">1.5M Happy Users</div>
+            <div class="card">10K Employees</div>
+            <div class="card">12K New Bookings</div>
+        </div>
+        <div class="main-dashboard">
+            <div class="bookings-section">
+                <h2>Latest Hotel Bookings</h2>
+                <div class="booking">
+                    <!-- <img src="hotel.jpg" alt="Hotel"> -->
+                    <div class="details">
+                        <p>Queens Hotel</p>
+                        <p>28 - 29 May</p>
+                        <p>Mark Wayne | 3 days ago</p>
+                    </div>
+                </div>
+                <!-- Repeat similar blocks for other bookings -->
+            </div>
+            <div class="earnings-stats">
+                <h2>Earning Stats on all bookings</h2>
+                <canvas id="earningsChart"></canvas>
+            </div>
+            <div class="monthly-increase">
+                <h2>Monthly increased amount</h2>
+                <div class="circle-chart">60%</div>
+            </div>
+            <div class="monthly-report">
+                <h2>Calculate monthly report based on each segment</h2>
+                <button>Generate Report</button>
+            </div>
+            <div class="valued-clients">
+                <h2>Top valued clients</h2>
+                <div class="client">
+                    <!-- <img src="client1.jpg" alt="Client 1"> -->
+                    <p>Mark Wayne</p>
+                </div>
+                <!-- Repeat similar blocks for other clients -->
+            </div>
+            <div class="new-flights">
+                <h2>Newly introduced Flights</h2>
+                <p>583 Nationwide in 25 states</p>
+            </div>
+            <div class="covid-help">
+                <h2>Covid Help Desk</h2>
+                <p>Health Insurance, Pension Plan, Medicaid, Family Protection</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <a href="/bookings-html" class="btn btn-primary">Bookings</a>
+                <a href="/" class="btn btn-primary">Packages</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

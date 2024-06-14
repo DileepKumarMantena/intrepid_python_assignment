@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Bookings Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="bookinginfo.css"> -->
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+    }
+    
+    .sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .logo img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    nav ul li {
+        margin: 20px 0;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+    
+    nav ul li.active > a {
+        color: #007bff;
+        font-weight: bold;
+    }
+    
+    nav ul li ul {
+        list-style-type: none;
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+    
+    .admin-info {
+        margin-top: auto;
+        text-align: center;
+    }
+    
+    .admin-info a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #007bff;
+    }
+    
+    .main-content {
+        flex: 1;
+        padding: 20px;
+        background-color: #f1f3f5;
+        overflow-y: auto;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .top-bar {
+        display: flex;
+        align-items: center;
+    }
+    
+    .top-bar input[type="search"] {
+        padding: 5px;
+        margin-right: 10px;
+    }
+    
+    .user-info {
+        display: flex;
+        align-items: center;
+    }
+    
+    .user-info span {
+        margin-right: 10px;
+    }
+    
+    .user-info img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    
+    .card {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .card-content p {
+        margin: 10px 0;
+    }
+    
+    .card-content span {
+        display: block;
+        color: #888;
+    }
+    
+    .card-content a {
+        display: block;
+        color: #007bff;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    
+    .small-card {
+        grid-column: span 1;
+    }
+    
+    .covid-help {
+        background-color: #ffdddd;
+        border-left: 5px solid #e74c3c;
+    }
+</style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <!-- <img src="intrepid-logo.png" alt="Intrepid Logo"> -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li class="active"><a href="#">Bookings</a>
+                    <ul>
+                        <li><a href="#">Package Trips</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Flights</a></li>
+                        <li><a href="#">Trains</a></li>
+                        <li><a href="#">Buses</a></li>
+                        <li><a href="#">Cabs</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Visa</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">B2B</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Generic Pages</a></li>
+            </ul>
+        </nav>
+        <div class="admin-info">
+            <a href="#">Contact Super Admin</a>
+            <p>Admin Dashboard<br>2021 All Rights Reserved</p>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>All Bookings info</h1>
+            <div class="top-bar">
+                <input type="search" placeholder="Search">
+                <div class="user-info">
+                    <span>EN</span>
+                    <span>Dollar</span>
+                    <span>Hi, Morris</span>
+                    <!-- <img src="user-profile.jpg" alt="User Profile"> -->
+                </div>
+            </div>
+        </header>
+        <div class="cards-container">
+            <div class="card">
+                <h2>Package Trips (1.5k)</h2>
+                <div class="card-content">
+                    <p>Mersmerizing Hills<br><span>Total 08 Days</span><br>$199.50/person</p>
+                    <p>Amazing Ladakh<br><span>Total 15 days</span><br>$499.50/person</p>
+                    <a href="#">Manage</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Hotels (10.5k)</h2>
+                <div class="card-content">
+                    <p>Queens Hotel<br><span>59 Rooms | 35 Available</span></p>
+                    <p>Hotel Lavilia<br><span>66 Rooms | 61 Available</span></p>
+                    <a href="#">Manage</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Flights (891)</h2>
+                <div class="card-content">
+                    <p>Qantas<br><span>26 Flights, 24 Running | 3 Delayed</span></p>
+                    <p>Emirates<br><span>59 Flights, 38 Running | 19 Delayed</span></p>
+                    <a href="#">View all</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Trains (5.6k)</h2>
+                <div class="card-content">
+                    <p>Eastern Railway<br><span>249 Trains, 165 Running | 72 Delayed</span></p>
+                    <p>Bullet Trains<br><span>105 Trains, 85 Running | 15 Delayed</span></p>
+                    <a href="#">View all</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Buses (2.5k)</h2>
+                <div class="card-content">
+                    <p>RedBus<br><span>59 Buses, 30 Running | 13 Delayed</span></p>
+                    <p>Roamer<br><span>68 Flights, 52 Running | 5 Delayed</span></p>
+                    <a href="#">View all</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Cabs</h2>
+                <div class="card-content">
+                    <p>Ola<br><span>Outstation | Inter | Rental</span></p>
+                    <p>Uber<br><span>Outstation | Inter | Rental | Others</span></p>
+                    <a href="#">View all</a>
+                </div>
+            </div>
+            <div class="card small-card">
+                <h2>Newly added Trips</h2>
+                <div class="card-content">
+                    <p>Domestic<br><span>1759 Worldwide in 63+ countries</span></p>
+                    <p>International<br><span>583 Nationwide in 25 states</span></p>
+                </div>
+            </div>
+            <div class="card small-card">
+                <h2>Newly introduced Flights</h2>
+                <div class="card-content">
+                    <p>Domestic<br><span>583 Nationwide in 25 states</span></p>
+                </div>
+            </div>
+            <div class="card small-card covid-help">
+                <h2>Covid Help Desk</h2>
+                <div class="card-content">
+                    <p>We value our employees, following plans have been introduced to protect our employees.</p>
+                    <p>Health Insurance | Pension Plan<br>Medicaid | Family Protection</p>
+                    <p>For help, our toll-free no. - 00180042300</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <a href="/" class="btn btn-primary">Packages</a>
+                <a href="/dashboard-items-html/" class="btn btn-primary">Dashboard</a>
+            </div>
+        </div>   
+    </div>
+</body>
+</html>

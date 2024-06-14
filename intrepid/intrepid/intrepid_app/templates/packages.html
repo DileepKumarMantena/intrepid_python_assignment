@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Trips</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        
+    <style>
+        /* Custom styles specific to this template */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .top-bar input[type="search"] {
+            width: 200px;
+            margin-right: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info span {
+            margin-right: 10px;
+        }
+
+        .filters {
+            margin-bottom: 20px;
+        }
+
+        .filter-tabs li {
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .filter-tabs li.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .date-range {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .date-range label {
+            margin-right: 10px;
+        }
+
+        .add-package {
+            margin-right: 10px;
+        }
+
+        .filter-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .filter-button:hover {
+            background-color: #0056b3;
+        }
+
+        .packages-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .packages-table th, .packages-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .packages-table th {
+            background-color: #f8f9fa;
+            text-align: left;
+        }
+
+        .packages-table img {
+            width: 50px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .pending-amount {
+            font-size: 12px;
+            color: #dc3545;
+        }
+
+        .view-notes {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .edit-package, .delete-package {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .edit-package:hover, .delete-package:hover {
+            text-decoration: underline;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pagination button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .pagination button:hover {
+            background-color: #0056b3;
+        }
+
+        .page-number {
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <h1>Package Trips</h1>
+        </header>
+            <a href="{% url 'add_package' %}" class="btn btn-primary add-package">Add New Package</a>
+        </div>
+        <table class="table packages-table">
+            <thead>
+                <tr>
+                    <th>Total Earnings ($)</th>
+                    <th>Special Notes</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for package in packages %}
+                    <tr>
+                        <td>{{ package.total_earnings }}<br><span class="pending-amount">Pending Amount {{ package.pending_amount }}</span></td>
+                        <td><button class="btn btn-success view-notes">View Notes</button></td>
+                        <td>
+                            <a href="{% url 'edit_package' package.id %}" class="edit-package">Edit</a>
+                            <a href="{% url 'delete_package' package.id %}" class="delete-package">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <a href="/bookings-html" class="btn btn-primary">Bookings</a>
+                <a href="/dashboard-items-html/" class="btn btn-primary">Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional, if needed for components like modals, tooltips, etc.) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
