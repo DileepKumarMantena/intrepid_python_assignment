@@ -120,10 +120,15 @@
             cursor: pointer;
         }
 
-        .edit-package, .delete-package {
+        .edit-package {
             margin-left: 10px;
             text-decoration: none;
-            color: #007bff;
+            color: purple;
+        }
+        .delete-package {
+            margin-left: 10px;
+            text-decoration: none;
+            color: red;
         }
 
         .edit-package:hover, .delete-package:hover {
@@ -159,22 +164,37 @@
     <div class="main-content">
         <header>
             <h1>Package Trips</h1>
+            <a href="{% url 'add_package' %}" class="btn btn-success add-package">Add New Package</a>
         </header>
-            <a href="{% url 'add_package' %}" class="btn btn-primary add-package">Add New Package</a>
-        </div>
         <table class="table packages-table">
             <thead>
                 <tr>
+                    <th>Overview</th>
+                    <th>Cost ($)</th>
+                    <th>Image Gallery</th>
+                    <th>Reviews</th>
+                    <th>Hotels</th>
                     <th>Total Earnings ($)</th>
-                    <th>Special Notes</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 {% for package in packages %}
                     <tr>
+                        <td>{{ package.overview }}</td>
+                        <td>{{ package.cost }}</td>
+                        <td>
+                            {% if package.image_gallery %}
+                                <img src="{{ package.image_gallery.url }}" alt="Image">
+                            {% endif %}
+                        </td>
+                        <td>{{ package.reviews }}</td>
+                        <td>
+                            {% for hotel in package.hotels %}
+                                {{ hotel }}<br>
+                            {% endfor %}
+                        </td>
                         <td>{{ package.total_earnings }}<br><span class="pending-amount">Pending Amount {{ package.pending_amount }}</span></td>
-                        <td><button class="btn btn-success view-notes">View Notes</button></td>
                         <td>
                             <a href="{% url 'edit_package' package.id %}" class="edit-package">Edit</a>
                             <a href="{% url 'delete_package' package.id %}" class="delete-package">Delete</a>
@@ -185,8 +205,8 @@
         </table>
         <div class="row mt-3">
             <div class="col-12 text-center">
-                <a href="/bookings-html" class="btn btn-primary">Bookings</a>
-                <a href="/dashboard-items-html/" class="btn btn-primary">Dashboard</a>
+                <a href="{% url 'bookings' %}" class="btn btn-primary">Bookings</a>
+                <a href="{% url 'dashboard_items' %}" class="btn btn-primary">Dashboard</a>
             </div>
         </div>
     </div>

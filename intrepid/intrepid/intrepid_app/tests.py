@@ -1,8 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from .models import DashboardItem, Booking, Package
-from .forms import PackageForm, NewPackageForm
-from django.contrib.auth.models import User
 
 class DashboardItemsViewTest(TestCase):
     def setUp(self):
